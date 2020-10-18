@@ -918,6 +918,9 @@ wtdbg2
 miniasm
 --------
 
+
+.. code-block:: none
+
  Mandetory Arguments
  --pre-process-reads	strs	Choose [yes or no]
 
@@ -926,6 +929,8 @@ miniasm
 				ont: nanopore]
 
 **Example: run abruijn assembler**
+
+.. code-block:: none
 
 	case 1: running miniasm with out read cleaning
 
@@ -940,6 +945,10 @@ miniasm
 
 falcon
 -------
+
+
+.. code-block:: none
+
  Mandetory Arguments
  --pre-process-reads	strs	Choose [yes or no]
 
