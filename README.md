@@ -9,7 +9,6 @@ To install Genome Assembly Benchmark Toolkit, you must have a minimum of 6 GiB f
 To provide an easier way to install, we provide a miniconda based installer.
 Installation also requires **pre-instaled** ``git``, ``gcc``, ``cpp`` and ``zlib1g-dev``.
 
-.. code-block:: none
     
     git clone https://github.com/sarangian/gabtk.git
     cd gabtk
