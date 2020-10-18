@@ -157,15 +157,14 @@ cleanReads
 -----------
 
 .. code-block:: none
+ 
+ 	benchmark.py cleanReads <arguments> --local-scheduler
 
+	 arguments            	  	type 	Description
 
- benchmark.py cleanReads <arguments> --local-scheduler
+	 Mandetory parameter
 
- arguments            	  	type 	Description
-
- Mandetory parameter
-
- --seq_platforms      	  	str 	choose from [
+	 --seq_platforms      	  	str 	choose from [
  						pe: paired-end,
     						pe-mp: paired-end and mate-pair,
     						pe-ont: paired-end and nanopore, 
@@ -173,23 +172,23 @@ cleanReads
     						ont: nanopore,
     						pac: pacbio]
 
- optional parameters
+ 	optional parameters
 
- --cleanFastq-kmer-length	int     Kmer length used for finding contaminants.
+	 --cleanFastq-kmer-length	int     Kmer length used for finding contaminants.
                 			Contaminants shorter than kmer length will not be found. 
                 			Default 21
   	
- --cleanFastq-corret-error  	Bool    Perform Error Correction Or Not
+	 --cleanFastq-corret-error  	Bool    Perform Error Correction Or Not
   					[Choose from True or False]
   					Default: False
   	
- --cleanFastq-k-trim	    	str     Trimming protocol to remove bases matching 
+	 --cleanFastq-k-trim	    	str     Trimming protocol to remove bases matching 
   					reference kmers from reads
   					Choose From[f: dont trim, r: trim to right, l: trim to left]
   					Default: r
 
- --cleanFastq-quality-trim  	str     Trimming protocol to remove bases with quality below the minimum
-					average region quality from read ends. Performed after looking for kmers. If enabled, set also Average quality below which to trim region.
+ 	--cleanFastq-quality-trim  	str     Trimming protocol to remove bases with quality below the minimum
+					average region quality from read ends. Performed after looking for kmers. If enabled, set also Average quality below which 					   to trim region.
 					Choose From [f: trim neither end',
 						rl: trim both end,
 						r: trim only right end,
@@ -197,50 +196,50 @@ cleanReads
 						Default: lr
 
 
- --cleanFastq-min-GC		float   Discard reads with GC content below this. 
+ 	--cleanFastq-min-GC		float   Discard reads with GC content below this. 
   					Default: min_gc=0.0
 
- --cleanFastq-max-GC		float 	Discard reads with GC content below this. 
+ 	--cleanFastq-max-GC		float 	Discard reads with GC content below this. 
   					Default: max_gc=1.0
 
- --cleanFastq-kmer-length	int     Kmer length used for finding contaminants. 
+ 	--cleanFastq-kmer-length	int     Kmer length used for finding contaminants. 
   					Default: kmer=13  
 
- --cleanFastq-trim-front	int     Number of bases to be trimmed in front for read.
+ 	--cleanFastq-trim-front	int     Number of bases to be trimmed in front for read.
   					Default: 0
 
- --cleanFastq-trim-tail 	int     trimming how many bases from the end of read.
+ 	--cleanFastq-trim-tail 	int     trimming how many bases from the end of read.
   					Default: 0
 
- --cleanFastq-max-n		int 	Maximum number of Ns after trimming
+ 	--cleanFastq-max-n		int 	Maximum number of Ns after trimming
 					If non-negative, reads with more Ns than this (after trimming) will be discarded.
 					Default: -1
 
- --cleanFastq-trim-quality  	int     Average quality below which to trim region
+ 	--cleanFastq-trim-quality  	int     Average quality below which to trim region
   					Default: 6
 
- --cleanFastq-min-length    	int     Reads shorter than min_length will be discarded
+ 	--cleanFastq-min-length    	int     Reads shorter than min_length will be discarded
   					Default: 40
 
- --cleanFastq-min-average-quality	int 	Reads with average quality (after trimming) below this will be discarded
+	 --cleanFastq-min-average-quality	int 	Reads with average quality (after trimming) below this will be discarded
   						Default: 10
 
- --cleanFastq-min-base-quality 		int 	Reads with any base below this quality (after trimming) will be discarded
+	 --cleanFastq-min-base-quality 		int 	Reads with any base below this quality (after trimming) will be discarded
   						Default: 0
- --cleanFastq-long-read-min-length	int	This parameter is specific for long read (pacbio / nanopore )only 
+	 --cleanFastq-long-read-min-length	int	This parameter is specific for long read (pacbio / nanopore )only 
 						seq_platforms='pac or ont']. 
 						Reads shorter than min_length will be discarded. 				
 						Default: long_read_min_length=1000 
 
- --cleanFastq-long-read-mean-quality   int  	This parameter is specific for long read only.
-						The mean quality is the mean read identity as indicated by the Phred quality scores. Example:
-						example, consider a read where all the fastq quality characters are +. The qscores for each base are 10 which equates to a 90 percentage chance of being correct. This read would then have a mean quality score of 90. Read mean qualities are converted to a z-score and scaled to the range 0-100 to make the mean qality score. This means that the read with the worst mean quality in the input set will get a mean quality score of 0 and the read with the best mean quality will get a mean quality score of 100. Default:  
-						meanQ=80
+	 --cleanFastq-long-read-mean-quality   int  	This parameter is specific for long read only.
+							The mean quality is the mean read identity as indicated by the Phred quality scores. Example:
+							example, consider a read where all the fastq quality characters are +. The qscores for each base are 10 							whichequates to a 90 percentage chance of being correct. This read would then have a mean quality score of 							   90. Read mean qualities are converted to a z-score and scaled to the range 0-100 to make the mean qality 							   score. This means  that the read with the worst mean quality in the input set will get a mean quality score 							      of 0 and the read with the best mean quality will get a mean quality score of 100. Default:  
+							meanQ=80
 
- --cleanFastq-long-read-keep-percent   int  	This parameter is specific for long read only.
-  						The percentage of the best reads to be retained. 
-  						Default: keep_percent=90
- --local-scheduler
+ 	--cleanFastq-long-read-keep-percent   int  	This parameter is specific for long read only.
+  							The percentage of the best reads to be retained. 
+  							Default: keep_percent=90
+	 --local-scheduler
 
 
 
@@ -282,19 +281,19 @@ skesa
 
 .. code-block:: none
 
- Note: skesa is used for assembling prokaryotic Illumina paired-end reads only
+ 	Note: skesa is used for assembling prokaryotic Illumina paired-end reads only
 
 
- Mandetory Arguments
- --pre-process-reads   	str   	Choose [yes or no]
+ 	Mandetory Arguments
+ 	--pre-process-reads   	str   	Choose [yes or no]
 
- Optional Argument
- --kmer 		int 	Minimal Kmer length for assembly
+	 Optional Argument
+	 --kmer 		int 	Minimal Kmer length for assembly
 				Default: 21
- --steps 		int     Number of assembly iterations from minimal to maximal kmer length in reads
+ 	--steps 		int     Number of assembly iterations from minimal to maximal kmer length in reads
                 		Default: 11
 
- --min-contig-length	int 	Exclude contigs from the FASTA file which are shorter than this length. 
+	 --min-contig-length	int 	Exclude contigs from the FASTA file which are shorter than this length. 
                 		Default: 200
 
 **Example: run skesa assembler**
@@ -319,16 +318,16 @@ lightAssembler
 
 .. code-block:: none
 
- Note: lightAssembler is used for assembling Illumina paired-end reads only
+	 Note: lightAssembler is used for assembling Illumina paired-end reads only
 
- Mandetory Arguments
- --pre-process-reads   	str   	Choose [yes or no]
+	 Mandetory Arguments
+ 	--pre-process-reads   	str   	Choose [yes or no]
 
- Optional Argument
- --kmer      		int 	Minimal Kmer length for assembly
+	 Optional Argument
+	 --kmer      		int 	Minimal Kmer length for assembly
 
 
-**Example: run light assembler**
+	**Example: run light assembler**
 
 .. code-block:: none
 
